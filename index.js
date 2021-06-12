@@ -55,7 +55,7 @@ const maxTowerHeight = (width, height, length) => {
 
 const printBoxesArray = (boxesArr, height, width, length) => {
     boxesArr.map(i => {
-        console.log('(' + length[i] + ', ' + width[i] + ', H: ' + height[i] + ')');
+        console.log('(' + ' L: ' + length[i] + ', W: ' + width[i] + ', H: ' + height[i] + ')');
     })
 }
 
