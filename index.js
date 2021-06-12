@@ -67,10 +67,12 @@ const main = () => {
     let length = [BOXES_NUM];
     let height = [BOXES_NUM];
 
+    console.log("Input 20 boxes: ");
     for (let i = 0; i < BOXES_NUM; i++) {
         length[i] = randomInteger(1, CONST_NUMBER);
         width[i] = randomInteger(1, CONST_NUMBER);
         height[i] = randomInteger(1, CONST_NUMBER);
+        console.log('(' + ' L: ' + length[i] + ', W: ' + width[i] + ', H: ' + height[i] + ')');
     }
 
     let result = maxTowerHeight(width, height, length);
@@ -81,10 +83,12 @@ const main = () => {
 
     BOXES_NUM = 30;
 
+    console.log("Input 30 boxes: ");
     for (let i = 0; i < BOXES_NUM; i++) {
         length[i] = randomInteger(1, CONST_NUMBER);
         width[i] = randomInteger(1, CONST_NUMBER);
         height[i] = randomInteger(1, CONST_NUMBER);
+        console.log('(' + ' L: ' + length[i] + ', W: ' + width[i] + ', H: ' + height[i] + ')');
     }
 
     result = maxTowerHeight(width, height, length);
