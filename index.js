@@ -3,7 +3,7 @@
 
 const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-const maxTowerHeight = (height, width, length) => {
+const maxTowerHeight = (width, height, length) => {
     const boxes = [];
     for (let i = 0; i < height.length; i++) boxes.push(i);
 
@@ -61,18 +61,19 @@ const printBoxesArray = (boxesArr, height, width, length) => {
 
 const main = () => {
     let BOXES_NUM = 20;
+    let CONST_NUMBER = 200;
 
     let width = [BOXES_NUM];
     let length = [BOXES_NUM];
     let height = [BOXES_NUM];
 
     for (let i = 0; i < BOXES_NUM; i++) {
-        length[i] = randomInteger(1, 200);
-        width[i] = randomInteger(1, 200);
-        height[i] = randomInteger(1, 200);
+        length[i] = randomInteger(1, CONST_NUMBER);
+        width[i] = randomInteger(1, CONST_NUMBER);
+        height[i] = randomInteger(1, CONST_NUMBER);
     }
 
-    let result = maxTowerHeight(height, width, length);
+    let result = maxTowerHeight(width, height, length);
 
     console.log("Max tower height for 20 boxes is " + result.maxMthVal);
     console.log('The max tower order: ');
@@ -81,12 +82,12 @@ const main = () => {
     BOXES_NUM = 30;
 
     for (let i = 0; i < BOXES_NUM; i++) {
-        length[i] = randomInteger(1, 200);
-        width[i] = randomInteger(1, 200);
-        height[i] = randomInteger(1, 200);
+        length[i] = randomInteger(1, CONST_NUMBER);
+        width[i] = randomInteger(1, CONST_NUMBER);
+        height[i] = randomInteger(1, CONST_NUMBER);
     }
 
-    result = maxTowerHeight(height, width, length);
+    result = maxTowerHeight(width, height, length);
 
     console.log("Max tower height for 30 boxes is " + result.maxMthVal);
     console.log('The max tower order: ');
