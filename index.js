@@ -1,6 +1,8 @@
 // linoy elimeleh - 319122610
 // mor revivo - 318572716
 
+const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 const maxTowerHeight = (height, width, length) => {
     const boxes = [];
     for (let i = 0; i < height.length; i++) boxes.push(i);
@@ -13,12 +15,12 @@ const maxTowerHeight = (height, width, length) => {
     const mth = Array(boxes.length).fill(-1);
     const maxBoxes = Array(boxes.length).fill(null);
 
-    for(let i = 0; i < boxes.length; i++) {
+    for (let i = 0; i < boxes.length; i++) {
         let val = 0;
 
         let maxBox;
-        for(let j = 0; j < i; j++) {
-            if(width[boxes[i]] < width[boxes[j]] && length[boxes[i]] < length[boxes[j]]) {
+        for (let j = 0; j < i; j++) {
+            if (width[boxes[i]] < width[boxes[j]] && length[boxes[i]] < length[boxes[j]]) {
                 if (val < mth[boxes[j]]) {
                     maxBox = boxes[j];
                     val = mth[boxes[j]];
@@ -47,7 +49,14 @@ const maxTowerHeight = (height, width, length) => {
         nextBox = maxBoxes[nextBox];
     }
 
-    return { maxMthVal, maxTower };
+    return {maxMthVal, maxTower};
+}
+
+
+const printBoxesArray = (boxesArr, height, width, length) => {
+    boxesArr.map(i => {
+        console.log('(' + length[i] + ', ' + width[i] + ', H: ' + height[i] + ')');
+    })
 }
 
 const main = () => {
@@ -59,7 +68,7 @@ const main = () => {
 
     for (let i = 0; i < BOXES_NUM; i++) {
         length[i] = randomInteger(1, 200);
-        width[i]  = randomInteger(1, 200);
+        width[i] = randomInteger(1, 200);
         height[i] = randomInteger(1, 200);
     }
 
@@ -73,7 +82,7 @@ const main = () => {
 
     for (let i = 0; i < BOXES_NUM; i++) {
         length[i] = randomInteger(1, 200);
-        width[i]  = randomInteger(1, 200);
+        width[i] = randomInteger(1, 200);
         height[i] = randomInteger(1, 200);
     }
 
@@ -83,13 +92,5 @@ const main = () => {
     console.log('The max tower order: ');
     printBoxesArray(result.maxTower, height, width, length);
 }
-
-const printBoxesArray = (boxesArr, height, width, length) => {
-    boxesArr.map(i => {
-        console.log('(' + length[i] + ', ' + width[i] + ', H: ' + height[i] + ')');
-    })
-}
-
-const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 main();
