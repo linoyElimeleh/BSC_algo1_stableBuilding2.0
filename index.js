@@ -75,7 +75,7 @@ const main = () => {
 
     let result = maxTowerHeight(width, height, length);
 
-    console.log("Max tower height for 20 boxes is " + result.maxMthVal);
+    console.log("Max tower height for 20 boxes: " + result.maxMthVal);
     console.log('The max tower: ');
     printBoxesArray(result.maxTower, height, width, length);
 
@@ -89,7 +89,7 @@ const main = () => {
 
     result = maxTowerHeight(width, height, length);
 
-    console.log("Max tower height for 30 boxes is " + result.maxMthVal);
+    console.log("Max tower height for 30 boxes: " + result.maxMthVal);
     console.log('The max tower: ');
     printBoxesArray(result.maxTower, height, width, length);
 }
